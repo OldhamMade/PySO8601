@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# exemelopy documentation build configuration file, created by
-# sphinx-quickstart on Thu Jan 13 15:41:30 2011.
+# PySO8601 documentation build configuration file, created by
+# sphinx-quickstart on Thu Jan 13 17:43:40 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
 #
@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage']
+extensions = ['sphinx.ext.autodoc']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'exemelopy'
+project = u'PySO8601'
 copyright = u'2011, Phillip B Oldham'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'exemelopydoc'
+htmlhelp_basename = 'PySO8601doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -178,7 +178,7 @@ htmlhelp_basename = 'exemelopydoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'exemelopy.tex', u'exemelopy Documentation',
+  ('index', 'PySO8601.tex', u'PySO8601 Documentation',
    u'Phillip B Oldham', 'manual'),
 ]
 
@@ -211,7 +211,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'exemelopy', u'exemelopy Documentation',
+    ('index', 'pyso8601', u'PySO8601 Documentation',
      [u'Phillip B Oldham'], 1)
 ]
 
@@ -219,7 +219,7 @@ man_pages = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'exemelopy'
+epub_title = u'PySO8601'
 epub_author = u'Phillip B Oldham'
 epub_publisher = u'Phillip B Oldham'
 epub_copyright = u'2011, Phillip B Oldham'

@@ -1,10 +1,10 @@
-.. exemelopy documentation master file, created by
-   sphinx-quickstart on Thu Jan 13 15:41:30 2011.
+.. PySO8601 documentation master file, created by
+   sphinx-quickstart on Thu Jan 13 17:43:40 2011.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to exemelopy's documentation!
-=====================================
+Welcome to PySO8601's documentation!
+====================================
 
 Contents:
 
