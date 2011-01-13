@@ -1,0 +1,9 @@
+.\#*
+*.pyc
+*.svn
+.installed.cfg
+Thumbs.db
+bin/*
+develop-eggs/*
+eggs/*
+parts/*
