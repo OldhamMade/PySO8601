@@ -16,4 +16,4 @@ from PySO8601 import parse_duration
 class DurationSpec(unittest.TestCase):
     """ISO8601 Duration Spec"""
     def it_should_parse_duration(self):
-        assert False
+        raise NotImplemented()

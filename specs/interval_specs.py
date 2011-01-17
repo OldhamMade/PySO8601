@@ -16,4 +16,4 @@ from PySO8601 import parse_interval
 class IntervalSpec(unittest.TestCase):
     """ISO8601 Interval Spec"""
     def it_should_parse_intervals(self):
-        assert False
+        raise NotImplemented()
