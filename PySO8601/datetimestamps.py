@@ -28,6 +28,7 @@ Times:
 import datetime
 import re
 
+from exceptions import *
 from timezones import Timezone
 
 FRACTION = r'(?P<fraction>\.\d+)?'
@@ -85,10 +86,6 @@ TIME_FORMATS = (
     (re.compile(r'^(?P<matched>\d{4})'), '%H%M'+TIMEZONE),
 
     )
-
-
-class ParseError(Exception):
-    pass
 
 
 def parse_date(datestring):

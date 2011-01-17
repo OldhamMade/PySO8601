@@ -15,3 +15,8 @@ designed to accept any valid ISO8601 formatted string:
  - [Intervals](http://en.wikipedia.org/wiki/ISO_8601#Time_intervals)
 
 Truncated representations (`YYYYMM`, `YYMMDD`, `hhmmss`, etc) are also accepted.
+
+Durations
+---------
+
+Due to the nature of working with calendars, years specified in the duration format are set to 365 days and months are set to 30 days.
