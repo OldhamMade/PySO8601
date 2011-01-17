@@ -1,6 +1,7 @@
 .\#*
 *.pyc
 *.svn
+.DS_Store
 .installed.cfg
 Thumbs.db
 bin/*
