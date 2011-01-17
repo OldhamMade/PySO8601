@@ -1,7 +1,7 @@
 import datetime
 import re
 
-from exceptions import *
+from util import *
 
 WEEK_DURATION = re.compile(r'''# start
 ^P # duration designator
@@ -11,17 +11,17 @@ W$ # week designator
 
 SIMPLE_DURATION = re.compile(r"""# start
 ^P                               # duration designator
-(?P<years>(\d*[\.,]?\d+)Y)?      # year designator
-(?P<months>(\d*[\.,]?\d+)M)?     # month designator
-(?P<days>(\d*[\.,]?\d+)D)?       # day designator
+((?P<years>\d*[\.,]?\d+)Y)?      # year designator
+((?P<months>\d*[\.,]?\d+)M)?     # month designator
+((?P<days>\d*[\.,]?\d+)D)?       # day designator
 (?P<time>T)?                     # time designator
 (?(time)                         # time designator lookup;
                                  #   skip next section if
                                  #   reference doesn't exist
-  (?P<hours>(\d*[\.,]?\d+)H)?    # hour designator
-  (?P<minutes>(\d*[\.,]?\d+)M)?  # minute designator
-  (?P<seconds>(\d*[\.,]?\d+)S)?  # second designator
-)
+  ((?P<hours>\d*[\.,]?\d+)H)?    # hour designator
+  ((?P<minutes>\d*[\.,]?\d+)M)?  # minute designator
+  ((?P<seconds>\d*[\.,]?\d+)S)?  # second designator
+)$
 """, re.VERBOSE)
 
 COMBINED_DURATION = re.compile(r"""# start
@@ -30,17 +30,19 @@ COMBINED_DURATION = re.compile(r"""# start
 -?                                 # separator
 (?P<months>\d{2})?                 # month designator
 -?                                 # separator
-(?P<days>\d{2}??                   # day designator
+(?P<days>\d{2})?                   # day designator
 (?P<time>[T|\s])?                  # time designator
 (?(time)                           # time designator lookup;
                                    #   skip next section if
                                    #   reference doesn't exist
-  (?P<hours>\d{2})?                # hour designator
+  (?P<hours>\d{2})                 # hour designator
   :?                               # separator
   (?P<minutes>\d{2})?              # minute designator
-  :?                               # separator
-  (?P<seconds>\d{2})?              # second designator
-)
+  (?(minutes)                      # minutes designator lookup
+    :?                             # separator
+    (?P<seconds>\d{2})?            # second designator
+  )
+)$
 """, re.VERBOSE)
 
 ELEMENTS = {
@@ -54,40 +56,27 @@ ELEMENTS = {
 
 
 def parse_duration(duration):
-    try:
-        return _parse_simple_duration(duration)
-    except ParseError:
-        pass
+    duration = str(duration).upper().strip()
 
-    try:
-        return _parse_combined_duration(duration)
-    except:
-        pass
-
-    try:
-        return _parse_week_duration(duration)
-    except:
-        pass
-
-    return ParseError()
-
-def _parse_simple_duration(duration):
     elements = ELEMENTS.copy()
 
-    elements.update(dict((k, int(v[:-1] or 0)) for k,v in SIMPLE_DURATION.match(duration).groupdict().iteritems()))
+    for pattern in (SIMPLE_DURATION, COMBINED_DURATION):
+        if pattern.match(duration):
+            found = pattern.match(duration).groupdict()
+            del found['time']
 
-    return datetime.timedelta(days=(elements['days'] +
-                                    _months_to_days(elements['months']) +
-                                    _years_to_days(elements['years'])),
-                              hours=elements['hours'],
-                              minutes=elements['minutes'],
-                              seconds=elements['seconds'])
+            elements.update(dict((k, int(v or 0))
+                                 for k, v
+                                 in found.iteritems()))
 
-def _parse_combined_duration(duration):
-    pass
-
-def _parse_week_duration(duration):
-    pass
+            return datetime.timedelta(days=(elements['days'] +
+                                            _months_to_days(elements['months']) +
+                                            _years_to_days(elements['years'])),
+                                      hours=elements['hours'],
+                                      minutes=elements['minutes'],
+                                      seconds=elements['seconds'])            
+    
+    return ParseError()
 
 
 DAYS_IN_YEAR = 365

@@ -28,7 +28,7 @@ Times:
 import datetime
 import re
 
-from exceptions import *
+from util import *
 from timezones import Timezone
 
 FRACTION = r'(?P<fraction>\.\d+)?'
