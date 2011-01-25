@@ -15,11 +15,11 @@ Contents:
    :members:
    :inherited-members:
 
-   .. method:: parse
-   .. method:: parse_date
-   .. method:: parse_time
-   .. method:: parse_duration
-   .. method:: parse_interval
+   .. autofunction:: parse
+   .. autofunction:: parse_date
+   .. autofunction:: parse_time
+   .. autofunction:: parse_duration
+   .. autofunction:: parse_interval
    
 .. autoclass:: Timezone
 
