@@ -3,17 +3,24 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to PySO8601's documentation!
-====================================
+Documentation for PySO8601
+==========================
 
-Contents:
+Module Contents:
 
 .. toctree::
    :maxdepth: 2
 
 .. automodule:: PySO8601
    :members:
+   :inherited-members:
 
+   .. autofunction:: parse
+   .. autofunction:: parse_date
+   .. autofunction:: parse_time
+   .. autofunction:: parse_duration
+   .. autofunction:: parse_interval
+   
 Indices and tables
 ==================
 

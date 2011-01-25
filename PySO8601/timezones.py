@@ -2,6 +2,10 @@ import datetime
 import re
 
 class Timezone(datetime.tzinfo):
+    """A subclass of ``datetime.tzinfo`` which handles timezone offsets for the various other methods in the module.
+
+    ``tzstring`` accepts a valid ISO8601 timezone string or ``None`` for UTC.
+    """
     ZERO = datetime.timedelta(0)
     regex = re.compile(r'^(?P<prefix>\+|-)(?P<hours>\d{2})(:?(?P<mins>\d{2}))?')
 

@@ -28,7 +28,7 @@ Times:
 import datetime
 import re
 
-from util import *
+from utility import *
 from timezones import Timezone
 
 FRACTION = r'(?P<fraction>\.\d+)?'
@@ -89,6 +89,10 @@ TIME_FORMATS = (
 
 
 def parse_date(datestring):
+    """Attepmts to parse an ISO8601 formatted ``datestring``.
+
+    Returns a ``datetime.datetime`` object.
+    """
     datestring = str(datestring).strip()
 
     if not datestring[0].isdigit():
@@ -117,6 +121,10 @@ def parse_date(datestring):
         
         
 def parse_time(timestring):
+    """Attepmts to parse an ISO8601 formatted ``timestring``.
+
+    Returns a ``datetime.datetime`` object.
+    """
     timestring = str(timestring).strip()
 
     for regex, pattern in TIME_FORMATS:

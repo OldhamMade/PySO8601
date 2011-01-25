@@ -1,7 +1,7 @@
 import datetime
 import re
 
-from util import *
+from utility import *
 
 WEEK_DURATION = re.compile(r'''# start
 ^P # duration designator
@@ -56,6 +56,10 @@ ELEMENTS = {
 
 
 def parse_duration(duration):
+    """Attepmts to parse an ISO8601 formatted ``duration``.
+
+    Returns a ``datetime.timedelta`` object.
+    """
     duration = str(duration).upper().strip()
 
     elements = ELEMENTS.copy()
