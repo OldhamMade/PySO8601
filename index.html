@@ -124,7 +124,8 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 <dl class="class">
 <dt id="PySO8601.Timezone">
 <em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module</p>
+<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module.</p>
+<p><tt class="docutils literal"><span class="pre">tzstring</span></tt> accepts a valid ISO8601 timezone string or <tt class="xref docutils literal"><span class="pre">None</span></tt> for UTC.</p>
 <dl class="attribute">
 <dt id="PySO8601.Timezone.fromutc">
 <tt class="descname">fromutc</tt><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
@@ -142,18 +143,6 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 <dl class="exception">
 <dt id="PySO8601.ParseError">
 <em class="property">exception </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt><a class="headerlink" href="#PySO8601.ParseError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returned when there is a formatting error with the argument(s)</p>
-</dd></dl>
-
-<dl class="class">
-<dt>
-<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big></dt>
-<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module</p>
-</dd></dl>
-
-<dl class="class">
-<dt>
-<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt></dt>
 <dd><p>Returned when there is a formatting error with the argument(s)</p>
 </dd></dl>
 

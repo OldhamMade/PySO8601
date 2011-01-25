@@ -21,11 +21,6 @@ Contents:
    .. autofunction:: parse_duration
    .. autofunction:: parse_interval
    
-.. autoclass:: Timezone
-
-.. autoclass:: ParseError
-
-
 Indices and tables
 ==================
 
