@@ -14,6 +14,12 @@ Contents:
 .. automodule:: PySO8601
    :members:
    :inherited-members:
+
+   .. method:: parse
+   .. method:: parse_date
+   .. method:: parse_time
+   .. method:: parse_duration
+   .. method:: parse_interval
    
 .. autoclass:: Timezone
 
