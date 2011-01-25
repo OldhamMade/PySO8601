@@ -6,7 +6,7 @@
 Documentation for PySO8601
 ==========================
 
-Contents:
+Module Contents:
 
 .. toctree::
    :maxdepth: 2
