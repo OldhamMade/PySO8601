@@ -52,37 +52,110 @@
 <span class="target" id="module-PySO8601"></span><dl class="function">
 <dt id="PySO8601.parse">
 <tt class="descclassname">PySO8601.</tt><tt class="descname">parse</tt><big>(</big><em>representation</em><big>)</big><a class="headerlink" href="#PySO8601.parse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Attempts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">representation</span></tt> string,
+which could be of any valid ISO8601 format (date, time, duration, interval).</p>
+<p>Return value is specific to <tt class="docutils literal"><span class="pre">representation</span></tt>.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_date">
 <tt class="descclassname">PySO8601.</tt><tt class="descname">parse_date</tt><big>(</big><em>datestring</em><big>)</big><a class="headerlink" href="#PySO8601.parse_date" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">datestring</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_time">
 <tt class="descclassname">PySO8601.</tt><tt class="descname">parse_time</tt><big>(</big><em>timestring</em><big>)</big><a class="headerlink" href="#PySO8601.parse_time" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">timestring</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_duration">
 <tt class="descclassname">PySO8601.</tt><tt class="descname">parse_duration</tt><big>(</big><em>duration</em><big>)</big><a class="headerlink" href="#PySO8601.parse_duration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">duration</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> object.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_interval">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_interval</tt><big>(</big><em>datestring</em><big>)</big><a class="headerlink" href="#PySO8601.parse_interval" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_interval</tt><big>(</big><em>interval</em><big>)</big><a class="headerlink" href="#PySO8601.parse_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
+<p>Returns a tuple of <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> and <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> objects, order dependent on <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse</tt><big>(</big><em>representation</em><big>)</big></dt>
+<dd><p>Attempts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">representation</span></tt> string,
+which could be of any valid ISO8601 format (date, time, duration, interval).</p>
+<p>Return value is specific to <tt class="docutils literal"><span class="pre">representation</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_date</tt><big>(</big><em>datestring</em><big>)</big></dt>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">datestring</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_time</tt><big>(</big><em>timestring</em><big>)</big></dt>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">timestring</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_duration</tt><big>(</big><em>duration</em><big>)</big></dt>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">duration</span></tt>.</p>
+<p>Returns a <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_interval</tt><big>(</big><em>interval</em><big>)</big></dt>
+<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
+<p>Returns a tuple of <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> and <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> objects, order dependent on <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
+</dd></dl>
 
 <dl class="class">
 <dt id="PySO8601.Timezone">
 <em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module</p>
+<dl class="attribute">
+<dt id="PySO8601.Timezone.fromutc">
+<tt class="descname">fromutc</tt><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
+<dd><p>datetime in UTC -&gt; datetime in local time.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PySO8601.Timezone.tzname">
+<tt class="descname">tzname</tt><a class="headerlink" href="#PySO8601.Timezone.tzname" title="Permalink to this definition">¶</a></dt>
+<dd><p>datetime -&gt; string name of time zone.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="PySO8601.ParseError">
+<em class="property">exception </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt><a class="headerlink" href="#PySO8601.ParseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returned when there is a formatting error with the argument(s)</p>
+</dd></dl>
 
 <dl class="class">
-<dt id="PySO8601.ParseError">
-<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt><a class="headerlink" href="#PySO8601.ParseError" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt>
+<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big></dt>
+<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt></dt>
+<dd><p>Returned when there is a formatting error with the argument(s)</p>
+</dd></dl>
 
 </div>
 <div class="section" id="indices-and-tables">
