@@ -44,6 +44,26 @@
             
   <div class="section" id="documentation-for-pyso8601">
 <h1>Documentation for PySO8601<a class="headerlink" href="#documentation-for-pyso8601" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pyso8601">
+<h2>PySO8601<a class="headerlink" href="#pyso8601" title="Permalink to this headline">¶</a></h2>
+<p>PySO8601 aims to be a better Python module to parse ISO 8601 dates. It is inspired
+by the <a class="reference external" href="http://code.google.com/p/pyiso8601">iso8601</a> currently available in the <a class="reference external" href="http://pypi.python.org/pypi/iso8601">pypi repository</a>, however this module is
+designed to accept any valid ISO8601 formatted string:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Dates">Date</a>, including:
+- <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Week_dates">Week Dates</a>
+- <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">Ordinal Dates</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Times">Time</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">Time zone designations</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">Combined Date &amp; Time</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Durations">Durations</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_intervals">Intervals</a></li>
+</ul>
+</div></blockquote>
+<p>Truncated representations (<tt class="docutils literal"><span class="pre">YYYYMM</span></tt>, <tt class="docutils literal"><span class="pre">YYMMDD</span></tt>, <tt class="docutils literal"><span class="pre">hhmmss</span></tt>, etc) are also accepted.</p>
+<div class="section" id="durations">
+<h3>Durations<a class="headerlink" href="#durations" title="Permalink to this headline">¶</a></h3>
+<p>Due to the nature of working with calendars, years specified in the duration format are set to 365 days and months are set to 30 days.</p>
 <p>Module Contents:</p>
 <div class="toctree-wrapper compound">
 <ul class="simple">
@@ -85,42 +105,6 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 <p>Returns a tuple of <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> and <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> objects, order dependent on <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt>
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse</tt><big>(</big><em>representation</em><big>)</big></dt>
-<dd><p>Attempts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">representation</span></tt> string,
-which could be of any valid ISO8601 format (date, time, duration, interval).</p>
-<p>Return value is specific to <tt class="docutils literal"><span class="pre">representation</span></tt>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_date</tt><big>(</big><em>datestring</em><big>)</big></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">datestring</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_time</tt><big>(</big><em>timestring</em><big>)</big></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">timestring</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_duration</tt><big>(</big><em>duration</em><big>)</big></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">duration</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> object.</p>
-</dd></dl>
-
-<dl class="function">
-<dt>
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_interval</tt><big>(</big><em>interval</em><big>)</big></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
-<p>Returns a tuple of <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> and <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> objects, order dependent on <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
-</dd></dl>
-
 <dl class="class">
 <dt id="PySO8601.Timezone">
 <em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
@@ -147,6 +131,8 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 </dd></dl>
 
 </div>
+</div>
+</div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -165,6 +151,12 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Documentation for PySO8601</a><ul>
+<li><a class="reference internal" href="#pyso8601">PySO8601</a><ul>
+<li><a class="reference internal" href="#durations">Durations</a><ul>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>

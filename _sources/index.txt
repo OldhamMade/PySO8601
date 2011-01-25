@@ -6,6 +6,8 @@
 Documentation for PySO8601
 ==========================
 
+.. include:: ../../README.rst
+
 Module Contents:
 
 .. toctree::
@@ -15,12 +17,6 @@ Module Contents:
    :members:
    :inherited-members:
 
-   .. autofunction:: parse
-   .. autofunction:: parse_date
-   .. autofunction:: parse_time
-   .. autofunction:: parse_duration
-   .. autofunction:: parse_interval
-   
 Indices and tables
 ==================
 
