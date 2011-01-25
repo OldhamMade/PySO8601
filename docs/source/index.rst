@@ -8,7 +8,9 @@ Documentation for PySO8601
 
 .. include:: ../../README.rst
 
+----------------
 Module Contents:
+----------------
 
 .. toctree::
    :maxdepth: 2
@@ -17,11 +19,4 @@ Module Contents:
    :members:
    :inherited-members:
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
