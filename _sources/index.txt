@@ -12,9 +12,6 @@ Documentation for PySO8601
 Module Contents:
 ----------------
 
-.. toctree::
-   :maxdepth: 2
-
 .. automodule:: PySO8601
    :members:
    :inherited-members:
