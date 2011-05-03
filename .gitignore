@@ -8,4 +8,4 @@ bin/*
 develop-eggs/*
 eggs/*
 parts/*
-docs/build/*
+docs/build
