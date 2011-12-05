@@ -6,7 +6,7 @@ PySO8601 aims to be a better Python module to parse ISO 8601 dates. It is inspir
 by the `iso8601`_ currently available in the `pypi repository`_, however this module is 
 designed to accept any valid ISO8601 formatted string:
 
-- `Date`_ including `Week Dates`_ (eg. 2011-W12-6) and `Ordinal Dates`_ (eg. 2012-003)
+- `Date`_ including `Week Dates`_ (eg. ``2011-W12-6``) and `Ordinal Dates`_ (eg. ``2012-003``)
 - `Time`_ including `Time zone designations`_
 - `Combined Date & Time`_
 - `Durations`_
