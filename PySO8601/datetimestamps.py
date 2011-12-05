@@ -33,7 +33,7 @@ from timezones import Timezone
 
 FRACTION = r'(?P<fraction>\.\d+)?'
 
-TIMEZONE = r'(?P<timezone>Z|(\+|-)(\d{2}):?(\d{2})?)?$'
+TIMEZONE = r'(?P<timezone>Z|(\+|-)(\d{2})(:?\d{2})?)?$'
 
 DATE_FORMATS = (
     # Extended combined format
