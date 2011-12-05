@@ -16,11 +16,26 @@ designed to accept any valid ISO8601 formatted string:
 
 Truncated representations (``YYYYMM``, ``YYMMDD``, ``hhmmss``, etc) are also accepted.
 
+-----
+USAGE
+-----
+
+::
+
+    import PySO8601
+    spam = PySO8601.parse('2011-01-01T14:32')
+    print spam # prints: 2011-01-01 14:32:00
+    eggs = PySO8601.parse('2010W052') # Week 5, day 2
+    print eggs # prints: 2010-02-01 00:00:00
+
 For full examples on usage please review the `specs`_ in the source.
 
----------
-Durations
----------
+---------------
+IMPORTANT NOTES
+---------------
+
+Durations:
+**********
 
 Due to the nature of working with calendars, years specified in the duration format are set to 365 days and months are set to 30 days.
 
