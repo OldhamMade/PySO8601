@@ -8,4 +8,5 @@ bin/*
 develop-eggs/*
 eggs/*
 parts/*
+docs/Makefile
 docs/build/*
