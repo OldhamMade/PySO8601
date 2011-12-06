@@ -34,11 +34,9 @@ IMPORTANT NOTES
 ---------------
 
 Durations:
-**********
-
-Due to the difficult nature of working with calendars, for the moment years specified 
-in the duration format are set to 365 days and months are set to 30 days. This will
-hopefully be addressed in the near future.
+  Due to the difficult nature of working with calendars, for the moment years specified 
+  in the duration format are set to 365 days and months are set to 30 days. This will
+  hopefully be addressed in the near future.
 
 .. _iso8601: http://code.google.com/p/pyiso8601
 .. _pypi repository: http://pypi.python.org/pypi/iso8601

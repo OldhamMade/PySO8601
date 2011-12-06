@@ -30,4 +30,4 @@ def parse(representation):
         return parse_duration(representation)
 
     return parse_date(representation)
-        
+

@@ -10,7 +10,7 @@ BASE_PATH = '/'.join(os.path.dirname(os.path.abspath(__file__)).split('/')[0:-1]
 
 if BASE_PATH not in sys.path:
     sys.path.insert(1, BASE_PATH)
-    
+
 from PySO8601 import parse_date, Timezone
 
 class BasicSpec(unittest.TestCase):
@@ -20,7 +20,7 @@ class BasicSpec(unittest.TestCase):
         self.assertEqual(result,
                          datetime.datetime(2011, 1, 13, 16, 44, 00,
                                            tzinfo=Timezone()))
-        
+
     def it_should_parse_separate_date_time_z(self):
         result = parse_date('20110113T1644Z')
         self.assertEqual(result,
@@ -41,7 +41,7 @@ class BasicSpec(unittest.TestCase):
         result = parse_date('2010W052')
         self.assertEqual(result,
                          datetime.datetime(2010, 2, 1))
-        
+
     def it_should_parse_ordinal_date(self):
         result = parse_date('2000234')
         self.assertEqual(result,
