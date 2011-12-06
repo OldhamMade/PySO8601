@@ -2,13 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation for PySO8601 &mdash; PySO8601 v0.1.0 documentation</title>
+    <title>Documentation for PySO8601 &mdash; PySO8601 0.1.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -21,7 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PySO8601 v0.1.0 documentation" href="#" /> 
+    <link rel="top" title="PySO8601 0.1.0 documentation" href="#" /> 
   </head>
   <body>
     <div class="related">
@@ -33,7 +36,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">PySO8601 v0.1.0 documentation</a> &raquo;</li> 
+        <li><a href="#">PySO8601 0.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,22 +52,34 @@
 <p>PySO8601 aims to be a better Python module to parse ISO 8601 dates. It is inspired
 by the <a class="reference external" href="http://code.google.com/p/pyiso8601">iso8601</a> currently available in the <a class="reference external" href="http://pypi.python.org/pypi/iso8601">pypi repository</a>, however this module is
 designed to accept any valid ISO8601 formatted string:</p>
-<blockquote>
-<div><ul class="simple">
-<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Dates">Date</a>, including:
-- <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Week_dates">Week Dates</a>
-- <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">Ordinal Dates</a></li>
+<ul class="simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Dates">Date</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Week_dates">Week Dates</a> (eg. <tt class="docutils literal"><span class="pre">2011-W12-6</span></tt>)
+and <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">Ordinal Dates</a> (eg. <tt class="docutils literal"><span class="pre">2012-003</span></tt>)</li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Times">Time</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">Time zone designations</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">Combined Date &amp; Time</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Durations">Durations</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_intervals">Intervals</a></li>
 </ul>
-</div></blockquote>
 <p>Truncated representations (<tt class="docutils literal"><span class="pre">YYYYMM</span></tt>, <tt class="docutils literal"><span class="pre">YYMMDD</span></tt>, <tt class="docutils literal"><span class="pre">hhmmss</span></tt>, etc) are also accepted.</p>
+<div class="section" id="usage">
+<h3>USAGE<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">PySO8601</span>
+<span class="n">spam</span> <span class="o">=</span> <span class="n">PySO8601</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&#39;2011-01-01T14:32&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">spam</span> <span class="c"># prints: 2011-01-01 14:32:00</span>
+<span class="n">eggs</span> <span class="o">=</span> <span class="n">PySO8601</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&#39;2010W052&#39;</span><span class="p">)</span> <span class="c"># Week 5, day 2</span>
+<span class="k">print</span> <span class="n">eggs</span> <span class="c"># prints: 2010-02-01 00:00:00</span>
+</pre></div>
+</div>
 <p>For full examples on usage please review the <a class="reference external" href="https://github.com/unpluggd/PySO8601/tree/master/specs">specs</a> in the source.</p>
+</div>
+<div class="section" id="important-notes">
+<h3>IMPORTANT NOTES<a class="headerlink" href="#important-notes" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="durations">
-<h3>Durations<a class="headerlink" href="#durations" title="Permalink to this headline">¶</a></h3>
-<p>Due to the nature of working with calendars, years specified in the duration format are set to 365 days and months are set to 30 days.</p>
+<h4>Durations:<a class="headerlink" href="#durations" title="Permalink to this headline">¶</a></h4>
+<p>Due to the difficult nature of working with calendars, for the moment years specified
+in the duration format are set to 365 days and months are set to 30 days. This will
+hopefully be addressed in the near future.</p>
+</div>
 </div>
 <div class="section" id="module-PySO8601">
 <span id="module-contents"></span><h3>Module Contents:<a class="headerlink" href="#module-PySO8601" title="Permalink to this headline">¶</a></h3>
@@ -108,16 +123,21 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 <dt id="PySO8601.Timezone">
 <em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
 <dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module.</p>
-<p><tt class="docutils literal"><span class="pre">tzstring</span></tt> accepts a valid ISO8601 timezone string or <tt class="xref docutils literal"><span class="pre">None</span></tt> for UTC.</p>
-<dl class="attribute">
+<p><tt class="docutils literal"><span class="pre">tzstring</span></tt> accepts a valid ISO8601 timezone string or <tt class="docutils literal"><span class="pre">None</span></tt> for UTC.</p>
+<dl class="method">
 <dt id="PySO8601.Timezone.fromutc">
-<tt class="descname">fromutc</tt><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">fromutc</tt><big>(</big><big>)</big><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
 <dd><p>datetime in UTC -&gt; datetime in local time.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="PySO8601.Timezone.regex">
+<tt class="descname">regex</tt><em class="property"> = &lt;_sre.SRE_Pattern object at 0x110406db0&gt;</em><a class="headerlink" href="#PySO8601.Timezone.regex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="PySO8601.Timezone.tzname">
-<tt class="descname">tzname</tt><a class="headerlink" href="#PySO8601.Timezone.tzname" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">tzname</tt><big>(</big><big>)</big><a class="headerlink" href="#PySO8601.Timezone.tzname" title="Permalink to this definition">¶</a></dt>
 <dd><p>datetime -&gt; string name of time zone.</p>
 </dd></dl>
 
@@ -143,7 +163,11 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
   <ul>
 <li><a class="reference internal" href="#">Documentation for PySO8601</a><ul>
 <li><a class="reference internal" href="#pyso8601">PySO8601</a><ul>
-<li><a class="reference internal" href="#durations">Durations</a></li>
+<li><a class="reference internal" href="#usage">USAGE</a></li>
+<li><a class="reference internal" href="#important-notes">IMPORTANT NOTES</a><ul>
+<li><a class="reference internal" href="#durations">Durations:</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-PySO8601">Module Contents:</a></li>
 </ul>
 </li>
@@ -159,7 +183,7 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -182,12 +206,12 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">PySO8601 v0.1.0 documentation</a> &raquo;</li> 
+        <li><a href="#">PySO8601 0.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2011, Phillip B Oldham.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>
