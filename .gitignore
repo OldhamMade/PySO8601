@@ -4,6 +4,8 @@
 .DS_Store
 .installed.cfg
 Thumbs.db
+PySO8601.egg-info/
+dist/
 bin/*
 develop-eggs/*
 eggs/*
