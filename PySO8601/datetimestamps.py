@@ -81,9 +81,9 @@ DATE_FORMATS = (
 TIME_FORMATS = (
     # Times
     (re.compile(r'^(?P<matched>\d{2}:\d{2}:\d{2})'+FRACTION+TIMEZONE), '%H:%M:%S'),
-    (re.compile(r'^(?P<matched>\d{2}:\d{2})'+TIMEZONE), '%H:%M'),
     (re.compile(r'^(?P<matched>\d{2}\d{2}\d{2})'+FRACTION+TIMEZONE), '%H%M%S'),
-    (re.compile(r'^(?P<matched>\d{4})'), '%H%M'+TIMEZONE),
+    (re.compile(r'^(?P<matched>\d{2}:\d{2})'+TIMEZONE), '%H:%M'),
+    (re.compile(r'^(?P<matched>\d{4})'+TIMEZONE), '%H%M'),
 
     )
 
@@ -97,7 +97,7 @@ def parse_date(datestring):
 
     if not datestring[0].isdigit():
         raise ParseError()
-        
+
     if 'W' in datestring.upper():
         try:
             datestring = datestring[:-1] + str(int(datestring[-1:]) -1)
@@ -116,10 +116,10 @@ def parse_date(datestring):
                 dt = dt.replace(tzinfo=Timezone(found.get('timezone', '')))
 
             return dt
-            
+
     return parse_time(datestring)
-        
-        
+
+
 def parse_time(timestring):
     """Attepmts to parse an ISO8601 formatted ``timestring``.
 
@@ -129,8 +129,10 @@ def parse_time(timestring):
 
     for regex, pattern in TIME_FORMATS:
         if regex.match(timestring):
-            found = regex.search(datestring).groupdict()
+            found = regex.search(timestring).groupdict()
+
             dt = datetime.datetime.utcnow().strptime(found['matched'], pattern)
+            dt = datetime.datetime.combine(datetime.date.today(), dt.time())
 
             if 'fraction' in found and found['fraction'] is not None:
                 dt += datetime.timedelta(milliseconds=int(found['fraction'][1:]))
