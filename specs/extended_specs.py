@@ -70,8 +70,28 @@ class ExtendedSpec(unittest.TestCase):
         self.assertEqual(result,
                          datetime.datetime(2010, 2, 1))
 
+    def it_should_parse_date_with_week_number_with_time(self):
+        result = parse_date('2010-W05-2T09:10:30')
+        self.assertEqual(result,
+                         datetime.datetime(2010, 2, 1, 9, 10, 30))
+
+    def it_should_parse_date_with_week_number_with_time_and_fragment(self):
+        result = parse_date('2010-W05-2T09:10:30.91')
+        self.assertEqual(result,
+                         datetime.datetime(2010, 2, 1, 9, 10, 30, 91))
+
     def it_should_parse_ordinal_date(self):
         result = parse_date('2000-234')
         self.assertEqual(result,
                          datetime.datetime(2000, 8, 21))
+
+    def it_should_parse_ordinal_date_with_time(self):
+        result = parse_date('2000-234 04:44:40')
+        self.assertEqual(result,
+                         datetime.datetime(2000, 8, 21, 4, 44, 40))
+
+    def it_should_parse_ordinal_date_with_time_and_fragment(self):
+        result = parse_date('2000-234 04:44:40.444')
+        self.assertEqual(result,
+                         datetime.datetime(2000, 8, 21, 4, 44, 40, 444))
 

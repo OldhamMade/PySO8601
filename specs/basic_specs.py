@@ -42,10 +42,20 @@ class BasicDateSpec(unittest.TestCase):
         self.assertEqual(result,
                          datetime.datetime(2010, 2, 1))
 
+    def it_should_parse_date_with_week_number_with_time(self):
+        result = parse_date('2010W052T120115')
+        self.assertEqual(result,
+                         datetime.datetime(2010, 2, 1, 12, 1, 15))
+
     def it_should_parse_ordinal_date(self):
         result = parse_date('2000234')
         self.assertEqual(result,
                          datetime.datetime(2000, 8, 21))
+
+    def it_should_parse_ordinal_date_with_time(self):
+        result = parse_date('2000234T1552')
+        self.assertEqual(result,
+                         datetime.datetime(2000, 8, 21, 15, 52))
 
     def it_should_parse_simple_dates(self):
         result = parse_date('20070102')
