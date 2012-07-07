@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+from datetime import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -43,14 +44,14 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'PySO8601'
-copyright = u'2011, Phillip B Oldham'
+copyright = u'%s, Phillip B Oldham <phillip.oldham@gmail.com>' % datetime.utcnow().year
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = __version__
+version = '.'.join(__version__.split('.')[:2])
 # The full version, including alpha/beta/rc tags.
 release = __version__
 
@@ -181,7 +182,7 @@ htmlhelp_basename = 'PySO8601doc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'PySO8601.tex', u'PySO8601 Documentation',
-   u'Phillip B Oldham', 'manual'),
+   u'Phillip B Oldham \\textless{}phillip.oldham@gmail.com\\textgreater{}', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -214,7 +215,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'pyso8601', u'PySO8601 Documentation',
-     [u'Phillip B Oldham'], 1)
+     [u'Phillip B Oldham <phillip.oldham@gmail.com>'], 1)
 ]
 
 

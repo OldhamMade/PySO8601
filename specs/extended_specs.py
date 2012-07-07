@@ -55,6 +55,11 @@ class ExtendedSpec(unittest.TestCase):
         self.assertEqual(result,
                          datetime.datetime(2011, 1, 13, 16, 44, 00))
 
+    def it_should_parse_separate_date_full_time_with_fragment(self):
+        result = parse_date('2011-01-01T14:32:11.12345')
+        self.assertEqual(result,
+                         datetime.datetime(2011, 1, 1, 14, 32, 11, 12345))
+
     def it_should_parse_separate_date_time(self):
         result = parse_date('2011-01-13T16:44')
         self.assertEqual(result,

@@ -25,7 +25,7 @@ Times:
     <time>+|-hh
 """
 
-import datetime
+from datetime import datetime, date
 import re
 
 from utility import *
@@ -107,10 +107,10 @@ def parse_date(datestring):
     for regex, pattern in DATE_FORMATS:
         if regex.match(datestring):
             found = regex.search(datestring).groupdict()
-            dt = datetime.datetime.utcnow().strptime(found['matched'], pattern)
+            dt = datetime.utcnow().strptime(found['matched'], pattern)
 
             if 'fraction' in found and found['fraction'] is not None:
-                dt += datetime.timedelta(milliseconds=int(found['fraction'][1:]))
+                dt = dt.replace(microsecond=int(found['fraction'][1:]))
 
             if 'timezone' in found and found['timezone'] is not None:
                 dt = dt.replace(tzinfo=Timezone(found.get('timezone', '')))
@@ -131,11 +131,11 @@ def parse_time(timestring):
         if regex.match(timestring):
             found = regex.search(timestring).groupdict()
 
-            dt = datetime.datetime.utcnow().strptime(found['matched'], pattern)
-            dt = datetime.datetime.combine(datetime.date.today(), dt.time())
+            dt = datetime.utcnow().strptime(found['matched'], pattern)
+            dt = datetime.combine(date.today(), dt.time())
 
             if 'fraction' in found and found['fraction'] is not None:
-                dt += datetime.timedelta(milliseconds=int(found['fraction'][1:]))
+                dt = dt.replace(microsecond=int(found['fraction'][1:]))
 
             if 'timezone' in found and found['timezone'] is not None:
                 dt = dt.replace(tzinfo=Timezone(found.get('timezone', '')))
