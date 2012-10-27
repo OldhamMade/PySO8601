@@ -1,7 +1,7 @@
 from datetime import datetime, date, timedelta
-from PySO8601.regexs import TIME_FORMATS, DATE_FORMATS
-from PySO8601.utility import ParseError
-from PySO8601.timezones import Timezone
+from .regexs import TIME_FORMATS, DATE_FORMATS
+from .utility import ParseError
+from .timezones import Timezone
 
 ONE_DAY = timedelta(days=1)
 

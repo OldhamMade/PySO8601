@@ -1,6 +1,6 @@
 import datetime
-from PySO8601.regexs import (SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS)
-from PySO8601.utility import ParseError
+from .regexs import (SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS)
+from .utility import ParseError
 
 DAYS_IN_YEAR = 365
 MONTHS_IN_YEAR = 12

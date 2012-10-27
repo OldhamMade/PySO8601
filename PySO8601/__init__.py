@@ -1,9 +1,9 @@
-from PySO8601.utility import ParseError
-from PySO8601.datetimestamps import parse_date, parse_time
-from PySO8601.durations import parse_duration
-from PySO8601.intervals import parse_interval
-from PySO8601.timezones import Timezone
-from PySO8601.__version__ import __version__
+from .utility import ParseError
+from .datetimestamps import parse_date, parse_time
+from .durations import parse_duration
+from .intervals import parse_interval
+from .timezones import Timezone
+from .__version__ import __version__
 
 __all__ = ['parse',
            'parse_date',

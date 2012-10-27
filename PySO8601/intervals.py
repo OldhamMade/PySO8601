@@ -1,6 +1,6 @@
-from PySO8601.utility import ParseError
-from PySO8601.durations import parse_duration
-from PySO8601.datetimestamps import parse_date
+from .utility import ParseError
+from .durations import parse_duration
+from .datetimestamps import parse_date
 
 
 def parse_interval(interval):
