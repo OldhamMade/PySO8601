@@ -32,19 +32,20 @@ FRACTION = r'(?P<fraction>\.\d+)?'
 TIMEZONE = r'(?P<timezone>Z|(\+|-)(\d{2})(:?\d{2})?)?$'
 
 TIME_FORMATS_EXTENDED = (
-    (r'(?P<time>\d{2}:\d{2}:\d{2})'+FRACTION+TIMEZONE, '%H:%M:%S'),
-    (r'(?P<time>\d{2}:\d{2})'+TIMEZONE, '%H:%M'),
+    (r'(?P<time>\d{2}:\d{2}:\d{2})' + FRACTION + TIMEZONE, '%H:%M:%S'),
+    (r'(?P<time>\d{2}:\d{2})' + TIMEZONE, '%H:%M'),
     )
 
 TIME_FORMATS_BASIC = (
     # Times
-    (r'(?P<time>\d{2}\d{2}\d{2})'+FRACTION+TIMEZONE, '%H%M%S'),
-    (r'(?P<time>\d{4})'+TIMEZONE, '%H%M'),
-    (r'(?P<time>\d{2})'+TIMEZONE, '%H'),
+    (r'(?P<time>\d{2}\d{2}\d{2})' + FRACTION + TIMEZONE, '%H%M%S'),
+    (r'(?P<time>\d{4})' + TIMEZONE, '%H%M'),
+    (r'(?P<time>\d{2})' + TIMEZONE, '%H'),
     )
 
 TIME_FORMATS = tuple(
-    (re.compile(r'^'+r), f) for r, f in (TIME_FORMATS_EXTENDED + TIME_FORMATS_BASIC)
+    (re.compile(r'^' + r), f) for r, f in (TIME_FORMATS_EXTENDED +
+        TIME_FORMATS_BASIC)
     )
 
 SEPARATORS = (
@@ -87,25 +88,24 @@ for sr, sf in SEPARATORS:
     for dr, df in DATE_FORMATS_EXTENDED:
         for tr, tf in TIME_FORMATS_EXTENDED:
             DATE_FORMATS += (
-                (re.compile(r'^'+dr+sr+tr), df+sf+tf),
+                (re.compile(r'^' + dr + sr + tr), df + sf + tf),
                 )
 
     for dr, df in DATE_FORMATS_BASIC:
         for tr, tf in TIME_FORMATS_BASIC:
             DATE_FORMATS += (
-                (re.compile(r'^'+dr+sr+tr), df+sf+tf),
+                (re.compile(r'^' + dr + sr + tr), df + sf + tf),
                 )
 
     for dr, df in DATE_FORMATS_EXTENDED:
         DATE_FORMATS += (
-            (re.compile(r'^'+dr+TIMEZONE), df),
+            (re.compile(r'^' + dr + TIMEZONE), df),
             )
 
     for dr, df in DATE_FORMATS_BASIC:
         DATE_FORMATS += (
-            (re.compile(r'^'+dr+TIMEZONE), df),
+            (re.compile(r'^' + dr + TIMEZONE), df),
             )
-
 
 
 # DURATIONS ----------

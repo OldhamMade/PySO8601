@@ -1,9 +1,10 @@
 from datetime import datetime, date, timedelta
-from regexs import TIME_FORMATS, DATE_FORMATS
-from utility import *
-from timezones import Timezone
+from PySO8601.regexs import TIME_FORMATS, DATE_FORMATS
+from PySO8601.utility import ParseError
+from PySO8601.timezones import Timezone
 
 ONE_DAY = timedelta(days=1)
+
 
 def parse_date(datestring):
     """Attepmts to parse an ISO8601 formatted ``datestring``.
@@ -22,7 +23,7 @@ def parse_date(datestring):
             value = found['date']
 
             if 'W' in found['date'].upper():
-                value = found['date'][:-1] + str(int(found['date'][-1:]) -1)
+                value = found['date'][:-1] + str(int(found['date'][-1:]) - 1)
 
             if 'separator' in found:
                 value += found['separator']
@@ -66,5 +67,3 @@ def parse_time(timestring):
             return dt
 
     raise ParseError()
-
-

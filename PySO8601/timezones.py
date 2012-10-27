@@ -1,13 +1,16 @@
 import datetime
 import re
 
+
 class Timezone(datetime.tzinfo):
-    """A subclass of ``datetime.tzinfo`` which handles timezone offsets for the various other methods in the module.
+    """A subclass of ``datetime.tzinfo`` which handles timezone offsets for the
+    various other methods in the module.
 
     ``tzstring`` accepts a valid ISO8601 timezone string or ``None`` for UTC.
     """
     _ZERO = datetime.timedelta(0)
-    _regex = re.compile(r'^(?P<prefix>\+|-)(?P<hours>\d{2})(:?(?P<mins>\d{2}))?')
+    _regex = re.compile(r'^(?P<prefix>\+|-)(?P<hours>\d{2})'
+            '(:?(?P<mins>\d{2}))?')
 
     def __init__(self, tzstring=None):
         self.__offset = self._ZERO
@@ -17,7 +20,8 @@ class Timezone(datetime.tzinfo):
             return
 
         found = self._regex.search(tzstring.strip()).groupdict()
-        prefix, hours, mins = found['prefix'], int(found['hours']), int(found['mins'] or 0)
+        prefix, hours, mins = (found['prefix'], int(found['hours']),
+                int(found['mins'] or 0))
 
         self.__name = "UTC%s%02d:%02d" % (prefix, hours, mins)
 

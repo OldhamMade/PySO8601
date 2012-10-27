@@ -1,7 +1,9 @@
 from setuptools import setup, find_packages
 import os, sys
 
-execfile('PySO8601/__version__.py')
+version_file = 'PySO8601/__version__.py'
+
+exec(compile(open(version_file).read(), version_file, 'exec'))
 
 desc_file = os.path.join(os.path.dirname(__file__), 'README.rst')
 long_description = ''
