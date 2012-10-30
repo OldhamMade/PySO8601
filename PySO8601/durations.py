@@ -1,9 +1,10 @@
 import datetime
-from regexs import WEEK_DURATION, SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS
-from utility import *
+from .regexs import (SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS)
+from .utility import ParseError
 
 DAYS_IN_YEAR = 365
 MONTHS_IN_YEAR = 12
+
 
 def _years_to_days(years):
     return years * DAYS_IN_YEAR

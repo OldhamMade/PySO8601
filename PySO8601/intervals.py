@@ -1,14 +1,13 @@
-import datetime
-import re
+from .utility import ParseError
+from .durations import parse_duration
+from .datetimestamps import parse_date
 
-from utility import *
-from durations import parse_duration
-from datetimestamps import parse_date
 
 def parse_interval(interval):
     """Attepmts to parse an ISO8601 formatted ``interval``.
 
-    Returns a tuple of ``datetime.datetime`` and ``datetime.timedelta`` objects, order dependent on ``interval``.
+    Returns a tuple of ``datetime.datetime`` and ``datetime.timedelta``
+    objects, order dependent on ``interval``.
     """
     a, b = str(interval).upper().strip().split('/')
 
@@ -26,4 +25,3 @@ def parse_interval(interval):
         b = parse_date(b)
 
     return a, b
-
