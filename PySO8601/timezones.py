@@ -10,7 +10,7 @@ class Timezone(datetime.tzinfo):
     """
     _ZERO = datetime.timedelta(0)
     _regex = re.compile(r'^(?P<prefix>\+|-)(?P<hours>\d{2})'
-            '(:?(?P<mins>\d{2}))?')
+                        '(:?(?P<mins>\d{2}))?')
 
     def __init__(self, tzstring=None):
         self.__offset = self._ZERO
@@ -20,8 +20,9 @@ class Timezone(datetime.tzinfo):
             return
 
         found = self._regex.search(tzstring.strip()).groupdict()
-        prefix, hours, mins = (found['prefix'], int(found['hours']),
-                int(found['mins'] or 0))
+        prefix = found['prefix']
+        hours = int(found['hours'])
+        mins = int(found['mins'] or 0)
 
         self.__name = "UTC%s%02d:%02d" % (prefix, hours, mins)
 

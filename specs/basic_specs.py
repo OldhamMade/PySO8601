@@ -1,17 +1,18 @@
 import datetime
 import os
-import re
 import sys
 import unittest
 
 print sys.path
 
-BASE_PATH = '/'.join(os.path.dirname(os.path.abspath(__file__)).split('/')[0:-1])
+BASE_PATH = '/'.join(os.path.dirname(
+    os.path.abspath(__file__)).split('/')[0:-1])
 
 if BASE_PATH not in sys.path:
     sys.path.insert(1, BASE_PATH)
 
 from PySO8601 import parse_date, parse_time, Timezone
+
 
 class BasicDateSpec(unittest.TestCase):
     """ISO8601 Basic Date Spec"""
@@ -73,33 +74,33 @@ class BasicDateSpec(unittest.TestCase):
                          datetime.datetime(2006, 1, 1))
 
 
-
 class BasicTimeSpec(unittest.TestCase):
     """ISO8601 Basic Time Spec"""
 
     def it_should_parse_full_time(self):
         result = parse_time('16:47:21')
         today = datetime.date.today()
-        self.assertEqual(result,
-                         datetime.datetime(today.year, today.month, today.day, 16, 47, 21))
-
+        self.assertEqual(
+            result,
+            datetime.datetime(today.year, today.month, today.day, 16, 47, 21))
 
     def it_should_parse_full_time_without_separators(self):
         result = parse_time('164721')
         today = datetime.date.today()
-        self.assertEqual(result,
-                         datetime.datetime(today.year, today.month, today.day, 16, 47, 21))
-
+        self.assertEqual(
+            result,
+            datetime.datetime(today.year, today.month, today.day, 16, 47, 21))
 
     def it_should_parse_short_time(self):
         result = parse_time('16:47')
         today = datetime.date.today()
-        self.assertEqual(result,
-                         datetime.datetime(today.year, today.month, today.day, 16, 47, 0))
-
+        self.assertEqual(
+            result,
+            datetime.datetime(today.year, today.month, today.day, 16, 47, 0))
 
     def it_should_parse_short_time_without_separators(self):
         result = parse_time('1647')
         today = datetime.date.today()
-        self.assertEqual(result,
-                         datetime.datetime(today.year, today.month, today.day, 16, 47, 0))
+        self.assertEqual(
+            result,
+            datetime.datetime(today.year, today.month, today.day, 16, 47, 0))

@@ -48,4 +48,4 @@ Durations:
 .. _Combined Date & Time: http://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations
 .. _Durations: http://en.wikipedia.org/wiki/ISO_8601#Durations 
 .. _Intervals: http://en.wikipedia.org/wiki/ISO_8601#Time_intervals
-.. _specs: https://github.com/unpluggd/PySO8601/tree/master/specs
+.. _specs: https://github.com/OldhamMade/PySO8601/tree/master/specs

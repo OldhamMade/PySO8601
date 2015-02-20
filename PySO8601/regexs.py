@@ -45,7 +45,7 @@ TIME_FORMATS_BASIC = (
 
 TIME_FORMATS = tuple(
     (re.compile(r'^' + r), f) for r, f in (TIME_FORMATS_EXTENDED +
-        TIME_FORMATS_BASIC)
+                                           TIME_FORMATS_BASIC)
     )
 
 SEPARATORS = (

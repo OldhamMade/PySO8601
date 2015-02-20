@@ -32,9 +32,13 @@ def parse_duration(duration):
                                  for k, v
                                  in found.iteritems()))
 
-            return datetime.timedelta(days=(elements['days'] +
-                                            _months_to_days(elements['months']) +
-                                            _years_to_days(elements['years'])),
+            days = sum((
+                elements['days'],
+                _months_to_days(elements['months']),
+                _years_to_days(elements['years'])
+            ))
+
+            return datetime.timedelta(days=days,
                                       hours=elements['hours'],
                                       minutes=elements['minutes'],
                                       seconds=elements['seconds'])

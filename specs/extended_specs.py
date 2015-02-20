@@ -1,17 +1,18 @@
 import datetime
 import os
-import re
 import sys
 import unittest
 
 print sys.path
 
-BASE_PATH = '/'.join(os.path.dirname(os.path.abspath(__file__)).split('/')[0:-1])
+BASE_PATH = '/'.join(os.path.dirname(
+    os.path.abspath(__file__)).split('/')[0:-1])
 
 if BASE_PATH not in sys.path:
     sys.path.insert(1, BASE_PATH)
 
 from PySO8601 import parse_date, Timezone
+
 
 class ExtendedSpec(unittest.TestCase):
     """ISO8601 Extended Spec"""
@@ -94,4 +95,3 @@ class ExtendedSpec(unittest.TestCase):
         result = parse_date('2000-234 04:44:40.444')
         self.assertEqual(result,
                          datetime.datetime(2000, 8, 21, 4, 44, 40, 444))
-
