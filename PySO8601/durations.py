@@ -43,4 +43,4 @@ def parse_duration(duration):
                                       minutes=elements['minutes'],
                                       seconds=elements['seconds'])
 
-    return ParseError()
+    raise ParseError()
