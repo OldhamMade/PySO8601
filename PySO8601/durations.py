@@ -1,4 +1,5 @@
 import datetime
+import math
 from .regexs import (SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS)
 from .utility import ParseError
 
@@ -11,7 +12,7 @@ def _years_to_days(years):
 
 
 def _months_to_days(months):
-    return (months * DAYS_IN_YEAR) / MONTHS_IN_YEAR
+    return math.floor((months * DAYS_IN_YEAR) / MONTHS_IN_YEAR)
 
 
 def parse_duration(duration):
@@ -30,7 +31,7 @@ def parse_duration(duration):
 
             elements.update(dict((k, int(v or 0))
                                  for k, v
-                                 in found.iteritems()))
+                                 in found.items()))
 
             days = sum((
                 elements['days'],

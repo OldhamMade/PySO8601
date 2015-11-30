@@ -3,8 +3,6 @@ import os
 import sys
 import unittest
 
-print sys.path
-
 BASE_PATH = '/'.join(os.path.dirname(
     os.path.abspath(__file__)).split('/')[0:-1])
 
