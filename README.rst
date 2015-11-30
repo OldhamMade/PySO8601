@@ -2,6 +2,9 @@
 PySO8601
 ========
 
+.. image:: https://travis-ci.org/OldhamMade/PySO8601.svg?branch=master
+    :target: https://travis-ci.org/OldhamMade/PySO8601
+
 PySO8601 aims to be a better Python module to parse ISO 8601 dates. It is inspired 
 by the `iso8601`_ currently available in the `pypi repository`_, however this module is 
 designed to accept any valid ISO8601 formatted string:
