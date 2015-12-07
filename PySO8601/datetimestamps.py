@@ -7,7 +7,8 @@ ONE_DAY = timedelta(days=1)
 
 
 def parse_date(datestring):
-    """Attepmts to parse an ISO8601 formatted ``datestring``.
+    """
+    Attepmt to parse an ISO8601 formatted ``datestring``.
 
     Returns a ``datetime.datetime`` object.
     """
@@ -45,7 +46,8 @@ def parse_date(datestring):
 
 
 def parse_time(timestring):
-    """Attepmts to parse an ISO8601 formatted ``timestring``.
+    """
+    Attepmt to parse an ISO8601 formatted ``timestring``.
 
     Returns a ``datetime.datetime`` object.
     """

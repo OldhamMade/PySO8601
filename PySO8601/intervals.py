@@ -4,7 +4,8 @@ from .datetimestamps import parse_date
 
 
 def parse_interval(interval):
-    """Attepmts to parse an ISO8601 formatted ``interval``.
+    """
+    Attepmt to parse an ISO8601 formatted ``interval``.
 
     Returns a tuple of ``datetime.datetime`` and ``datetime.timedelta``
     objects, order dependent on ``interval``.
@@ -13,6 +14,9 @@ def parse_interval(interval):
 
     if a[0] is 'P' and b[0] is 'P':
         raise ParseError()
+
+    if a[0] != 'P' and b[0] != 'P':
+        return parse_date(a), parse_date(b)
 
     if a[0] is 'P':
         a = parse_duration(a)

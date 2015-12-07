@@ -3,7 +3,8 @@ import re
 
 
 class Timezone(datetime.tzinfo):
-    """A subclass of ``datetime.tzinfo`` which handles timezone offsets for the
+    """
+    A subclass of ``datetime.tzinfo`` which handles timezone offsets for the
     various other methods in the module.
 
     ``tzstring`` accepts a valid ISO8601 timezone string or ``None`` for UTC.

@@ -1,6 +1,10 @@
 from .utility import ParseError
 from .datetimestamps import parse_date, parse_time
-from .durations import parse_duration
+from .durations import (
+    parse_duration,
+    parse_duration_with_start,
+    parse_duration_with_end
+)
 from .intervals import parse_interval
 from .timezones import Timezone
 from .__version__ import __version__
@@ -9,6 +13,8 @@ __all__ = ['parse',
            'parse_date',
            'parse_time',
            'parse_duration',
+           'parse_duration_with_start',
+           'parse_duration_with_end',
            'parse_interval',
            'Timezone',
            'ParseError',

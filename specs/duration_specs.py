@@ -9,7 +9,11 @@ BASE_PATH = '/'.join(os.path.dirname(
 if BASE_PATH not in sys.path:
     sys.path.insert(1, BASE_PATH)
 
-from PySO8601 import parse_duration
+from PySO8601 import (
+    parse_duration,
+    parse_duration_with_start,
+    parse_duration_with_end
+)
 
 
 class DurationSpec(unittest.TestCase):
@@ -53,3 +57,42 @@ class DurationSpec(unittest.TestCase):
                                             hours=12,
                                             minutes=30,
                                             seconds=5))
+
+    def it_should_parse_durations_with_start(self):
+        start = datetime.datetime(2000, 1, 1)
+        result = parse_duration_with_start(start, 'P3Y')
+        self.assertEqual(result,
+                         (start, datetime.timedelta(days=1096)))
+        result = parse_duration('P3Y', start=start)
+        self.assertEqual(result,
+                         (start, datetime.timedelta(days=1096)))
+
+
+    def it_should_parse_complex_durations_with_start(self):
+        start = datetime.datetime(2000, 1, 1)
+        result = parse_duration_with_start(start, 'P3Y2M3DT1H1M1S')
+        self.assertEqual(result,
+                         (start, datetime.timedelta(days=1158, seconds=3661)))
+        result = parse_duration('P3Y2M3DT1H1M1S', start=start)
+        self.assertEqual(result,
+                         (start, datetime.timedelta(days=1158, seconds=3661)))
+
+
+    def it_should_parse_durations_with_end(self):
+        end = datetime.datetime(2003, 1, 1)
+        result = parse_duration_with_end('P3Y', end)
+        self.assertEqual(result,
+                         (datetime.timedelta(days=1096), end))
+        result = parse_duration('P3Y', end=end)
+        self.assertEqual(result,
+                         (datetime.timedelta(days=1096), end))
+
+
+    def it_should_parse_complex_durations_with_end(self):
+        end = datetime.datetime(2003, 3, 4, 1, 1, 1)
+        result = parse_duration_with_end('P3Y2M3DT1H1M1S', end)
+        self.assertEqual(result,
+                         (datetime.timedelta(days=1158, seconds=3661), end))
+        result = parse_duration('P3Y2M3DT1H1M1S', end=end)
+        self.assertEqual(result,
+                         (datetime.timedelta(days=1158, seconds=3661), end))

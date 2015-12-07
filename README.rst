@@ -36,10 +36,11 @@ For full examples on usage please review the `specs`_ in the source.
 IMPORTANT NOTES
 ---------------
 
+Python 3:
+  PySO8601 is now compatible with Python 2.6, 2.7, and >= 3.3.
+
 Durations:
-  Due to the difficult nature of working with calendars, for the moment years specified 
-  in the duration format are set to 365 days and months are set to 30 days. This will
-  hopefully be addressed in the near future.
+  ``parse_duration``, when only provided a duration string, will assume 365 days in a year and 30 days in a month, due to the difficult nature of working with calendars. However, passing a ``start`` or ``end`` timestamp will provide the correct calculation based on that date.
 
 .. _iso8601: http://code.google.com/p/pyiso8601
 .. _pypi repository: http://pypi.python.org/pypi/iso8601
