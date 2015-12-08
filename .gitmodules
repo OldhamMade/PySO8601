@@ -1,0 +1,4 @@
+[submodule "docs/html"]
+	path = docs/html
+	url = git@github.com:OldhamMade/PySO8601.git
+	branch = gh-pages

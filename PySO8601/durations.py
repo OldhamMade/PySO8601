@@ -1,10 +1,6 @@
-import calendar
-import copy
-import datetime
 from .regexs import (SIMPLE_DURATION, COMBINED_DURATION, ELEMENTS)
 from .utility import (
     ParseError,
-    DAYS_IN_YEAR,
     MONTHS_IN_YEAR,
     _years_to_days,
     _months_to_days,
