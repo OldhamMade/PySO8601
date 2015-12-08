@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -7,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation for PySO8601 &mdash; PySO8601 0.1.7 documentation</title>
+    <title>Documentation for PySO8601 &mdash; PySO8601 0.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '0.1.7',
+        URL_ROOT:    './',
+        VERSION:     '0.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,10 +23,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PySO8601 0.1.7 documentation" href="#" /> 
+    <link rel="top" title="PySO8601 0.2.0 documentation" href="#" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -36,31 +35,32 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">PySO8601 0.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">PySO8601 0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="documentation-for-pyso8601">
 <h1>Documentation for PySO8601<a class="headerlink" href="#documentation-for-pyso8601" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pyso8601">
 <h2>PySO8601<a class="headerlink" href="#pyso8601" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://travis-ci.org/OldhamMade/PySO8601"><img alt="https://travis-ci.org/OldhamMade/PySO8601.svg?branch=master" src="https://travis-ci.org/OldhamMade/PySO8601.svg?branch=master" /></a>
 <p>PySO8601 aims to be a better Python module to parse ISO 8601 dates. It is inspired
 by the <a class="reference external" href="http://code.google.com/p/pyiso8601">iso8601</a> currently available in the <a class="reference external" href="http://pypi.python.org/pypi/iso8601">pypi repository</a>, however this module is
 designed to accept any valid ISO8601 formatted string:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Dates">Date</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Week_dates">Week Dates</a> (eg. <tt class="docutils literal"><span class="pre">2011-W12-6</span></tt>)
-and <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">Ordinal Dates</a> (eg. <tt class="docutils literal"><span class="pre">2012-003</span></tt>)</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Dates">Date</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Week_dates">Week Dates</a> (eg. <code class="docutils literal"><span class="pre">2011-W12-6</span></code>)
+and <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Ordinal_dates">Ordinal Dates</a> (eg. <code class="docutils literal"><span class="pre">2012-003</span></code>)</li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Times">Time</a> including <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">Time zone designations</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">Combined Date &amp; Time</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Durations">Durations</a></li>
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Time_intervals">Intervals</a></li>
 </ul>
-<p>Truncated representations (<tt class="docutils literal"><span class="pre">YYYYMM</span></tt>, <tt class="docutils literal"><span class="pre">YYMMDD</span></tt>, <tt class="docutils literal"><span class="pre">hhmmss</span></tt>, etc) are also accepted.</p>
+<p>Truncated representations (<code class="docutils literal"><span class="pre">YYYYMM</span></code>, <code class="docutils literal"><span class="pre">YYMMDD</span></code>, <code class="docutils literal"><span class="pre">hhmmss</span></code>, etc) are also accepted.</p>
 <div class="section" id="usage">
 <h3>USAGE<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">PySO8601</span>
@@ -70,69 +70,92 @@ and <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601#Or
 <span class="k">print</span> <span class="n">eggs</span> <span class="c"># prints: 2010-02-01 00:00:00</span>
 </pre></div>
 </div>
-<p>For full examples on usage please review the <a class="reference external" href="https://github.com/unpluggd/PySO8601/tree/master/specs">specs</a> in the source.</p>
+<p>For full examples on usage please review the <a class="reference external" href="https://github.com/OldhamMade/PySO8601/tree/master/specs">specs</a> in the source.</p>
 </div>
 <div class="section" id="important-notes">
 <h3>IMPORTANT NOTES<a class="headerlink" href="#important-notes" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
+<dt>Python 3:</dt>
+<dd>PySO8601 is now compatible with Python 2.6, 2.7, and &gt;= 3.3.</dd>
 <dt>Durations:</dt>
-<dd>Due to the difficult nature of working with calendars, for the moment years specified
-in the duration format are set to 365 days and months are set to 30 days. This will
-hopefully be addressed in the near future.</dd>
+<dd><code class="docutils literal"><span class="pre">parse_duration</span></code>, when only provided a duration string, will assume 365 days in a year and 30 days in a month, due to the difficult nature of working with calendars. However, passing a <code class="docutils literal"><span class="pre">start</span></code> or <code class="docutils literal"><span class="pre">end</span></code> timestamp will provide the correct calculation based on that date.</dd>
 </dl>
 </div>
 <div class="section" id="module-PySO8601">
 <span id="module-contents"></span><h3>Module Contents:<a class="headerlink" href="#module-PySO8601" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="PySO8601.parse">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse</tt><big>(</big><em>representation</em><big>)</big><a class="headerlink" href="#PySO8601.parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attempts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">representation</span></tt> string,
-which could be of any valid ISO8601 format (date, time, duration, interval).</p>
-<p>Return value is specific to <tt class="docutils literal"><span class="pre">representation</span></tt>.</p>
+<code class="descclassname">PySO8601.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>representation</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to parse an ISO8601 formatted <code class="docutils literal"><span class="pre">representation</span></code> string,
+which could be of any valid ISO8601 format (date, time, duration,
+interval).</p>
+<p>Return value is specific to <code class="docutils literal"><span class="pre">representation</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_date">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_date</tt><big>(</big><em>datestring</em><big>)</big><a class="headerlink" href="#PySO8601.parse_date" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">datestring</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+<code class="descclassname">PySO8601.</code><code class="descname">parse_date</code><span class="sig-paren">(</span><em>datestring</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted <code class="docutils literal"><span class="pre">datestring</span></code>.</p>
+<p>Returns a <code class="docutils literal"><span class="pre">datetime.datetime</span></code> object.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_time">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_time</tt><big>(</big><em>timestring</em><big>)</big><a class="headerlink" href="#PySO8601.parse_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">timestring</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> object.</p>
+<code class="descclassname">PySO8601.</code><code class="descname">parse_time</code><span class="sig-paren">(</span><em>timestring</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted <code class="docutils literal"><span class="pre">timestring</span></code>.</p>
+<p>Returns a <code class="docutils literal"><span class="pre">datetime.datetime</span></code> object.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_duration">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_duration</tt><big>(</big><em>duration</em><big>)</big><a class="headerlink" href="#PySO8601.parse_duration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">duration</span></tt>.</p>
-<p>Returns a <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> object.</p>
+<code class="descclassname">PySO8601.</code><code class="descname">parse_duration</code><span class="sig-paren">(</span><em>duration</em>, <em>start=None</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted duration.</p>
+<p>Accepts a <code class="docutils literal"><span class="pre">duration</span></code> and optionally a start or end <code class="docutils literal"><span class="pre">datetime</span></code>.
+<code class="docutils literal"><span class="pre">duration</span></code> must be an ISO8601 formatted string.</p>
+<p>Returns a <code class="docutils literal"><span class="pre">datetime.timedelta</span></code> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="PySO8601.parse_duration_with_start">
+<code class="descclassname">PySO8601.</code><code class="descname">parse_duration_with_start</code><span class="sig-paren">(</span><em>start</em>, <em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_duration_with_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted duration based on a start datetime.</p>
+<p>Accepts a <code class="docutils literal"><span class="pre">duration</span></code> and a start <code class="docutils literal"><span class="pre">datetime</span></code>. <code class="docutils literal"><span class="pre">duration</span></code> must be
+an ISO8601 formatted string.</p>
+<p>Returns a <code class="docutils literal"><span class="pre">datetime.timedelta</span></code> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="PySO8601.parse_duration_with_end">
+<code class="descclassname">PySO8601.</code><code class="descname">parse_duration_with_end</code><span class="sig-paren">(</span><em>duration</em>, <em>end</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_duration_with_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted duration based on an end datetime.</p>
+<p>Accepts a <code class="docutils literal"><span class="pre">duration</span></code> and an end <code class="docutils literal"><span class="pre">datetime</span></code>. <code class="docutils literal"><span class="pre">duration</span></code> must be
+an ISO8601 formatted string.</p>
+<p>Returns a <code class="docutils literal"><span class="pre">datetime.timedelta</span></code> object.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="PySO8601.parse_interval">
-<tt class="descclassname">PySO8601.</tt><tt class="descname">parse_interval</tt><big>(</big><em>interval</em><big>)</big><a class="headerlink" href="#PySO8601.parse_interval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Attepmts to parse an ISO8601 formatted <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
-<p>Returns a tuple of <tt class="docutils literal"><span class="pre">datetime.datetime</span></tt> and <tt class="docutils literal"><span class="pre">datetime.timedelta</span></tt> objects, order dependent on <tt class="docutils literal"><span class="pre">interval</span></tt>.</p>
+<code class="descclassname">PySO8601.</code><code class="descname">parse_interval</code><span class="sig-paren">(</span><em>interval</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.parse_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attepmt to parse an ISO8601 formatted <code class="docutils literal"><span class="pre">interval</span></code>.</p>
+<p>Returns a tuple of <code class="docutils literal"><span class="pre">datetime.datetime</span></code> and <code class="docutils literal"><span class="pre">datetime.timedelta</span></code>
+objects, order dependent on <code class="docutils literal"><span class="pre">interval</span></code>.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="PySO8601.Timezone">
-<em class="property">class </em><tt class="descclassname">PySO8601.</tt><tt class="descname">Timezone</tt><big>(</big><em>tzstring=None</em><big>)</big><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
-<dd><p>A subclass of <tt class="docutils literal"><span class="pre">datetime.tzinfo</span></tt> which handles timezone offsets for the various other methods in the module.</p>
-<p><tt class="docutils literal"><span class="pre">tzstring</span></tt> accepts a valid ISO8601 timezone string or <tt class="docutils literal"><span class="pre">None</span></tt> for UTC.</p>
+<em class="property">class </em><code class="descclassname">PySO8601.</code><code class="descname">Timezone</code><span class="sig-paren">(</span><em>tzstring=None</em><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.Timezone" title="Permalink to this definition">¶</a></dt>
+<dd><p>A subclass of <code class="docutils literal"><span class="pre">datetime.tzinfo</span></code> which handles timezone offsets for the
+various other methods in the module.</p>
+<p><code class="docutils literal"><span class="pre">tzstring</span></code> accepts a valid ISO8601 timezone string or <code class="docutils literal"><span class="pre">None</span></code> for UTC.</p>
 <dl class="method">
 <dt id="PySO8601.Timezone.fromutc">
-<tt class="descname">fromutc</tt><big>(</big><big>)</big><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fromutc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.Timezone.fromutc" title="Permalink to this definition">¶</a></dt>
 <dd><p>datetime in UTC -&gt; datetime in local time.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="PySO8601.Timezone.tzname">
-<tt class="descname">tzname</tt><big>(</big><big>)</big><a class="headerlink" href="#PySO8601.Timezone.tzname" title="Permalink to this definition">¶</a></dt>
+<code class="descname">tzname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PySO8601.Timezone.tzname" title="Permalink to this definition">¶</a></dt>
 <dd><p>datetime -&gt; string name of time zone.</p>
 </dd></dl>
 
@@ -140,8 +163,8 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 
 <dl class="exception">
 <dt id="PySO8601.ParseError">
-<em class="property">exception </em><tt class="descclassname">PySO8601.</tt><tt class="descname">ParseError</tt><a class="headerlink" href="#PySO8601.ParseError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returned when there is a formatting error with the argument(s)</p>
+<em class="property">exception </em><code class="descclassname">PySO8601.</code><code class="descname">ParseError</code><a class="headerlink" href="#PySO8601.ParseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when there is a formatting error with the argument(s)</p>
 </dd></dl>
 
 </div>
@@ -152,7 +175,7 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
@@ -167,12 +190,14 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
 </li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -189,7 +214,7 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -198,12 +223,12 @@ which could be of any valid ISO8601 format (date, time, duration, interval).</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">PySO8601 0.1.7 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">PySO8601 0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, Phillip B Oldham &lt;phillip.oldham@gmail.com&gt;.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Phillip B Oldham &lt;phillip.oldham@gmail.com&gt;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.3.
     </div>
   </body>
 </html>
